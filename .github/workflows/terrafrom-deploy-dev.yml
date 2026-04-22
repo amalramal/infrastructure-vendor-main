@@ -1,7 +1,11 @@
 name: Terraform Deploy (DEV)
-
+# workflow_dispatch: is not reusable. cannot be called via uses:
+#                  : signifies Terraform flow is manually setup.
+# to call this from ci (also)
+# workflow_call:
+# now CI will automatically trigger deploy on main
 on:
-  workflow_dispatch:
+  workflow_all:
 
 permissions:
   id-token: write
